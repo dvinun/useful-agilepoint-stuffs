@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <meta charset="utf-8">
+    <title>AgilePoint</title>
+
+    <script>
+        $(document).ready(function () {
+
+            var AgilePointServerBaseUrl = "https://AGILEDEV01.uff.ufl.edu:13490/agilepointserver/";
+            // one time ajax setup
+            $.ajaxSetup({
+                processData: false,
+                contentType: "application/json",
+                dataType: "json",
+                type: "POST",
+                headers: {
+                    "Authorization": "Basic Zm91bmRhdGlvblxza3VtYXI6c2MyY3gkajc="   // base 64 encoded string, format should be domain\username:password here ASTN\ReedUser
+                },
+                //// Use following block to perform common success action.
+                //success: function (data, status) {
+                //    if (data == null)
+                //        alert("Successfully Processed");
+                //    else
+                //        alert(JSON.stringify(data));
+                //},
+                error: function (xhr, status, error) {
+                    alert(JSON.stringify(error));
+
+                }
+            });
+
+
+
+        
+            $('#Start').click(function () {
+
+				debugger;
+				
+                var ProcessID;
+                var ProcessInstanceID;
+                var ProcessName = $('#Instance').val() + "_" + new Date().getTime();
+				
+				
+                var WorkObjectID;
+
+                // Get id of process template
+                $.ajax({
+
+                    type: "GET",
+                    url: AgilePointServerBaseUrl + "/workflow/GetReleasedPID/" + $('#Template').val(),
+                    success: function (data, status) {
+                        if (data != null) {
+                            console.log(data);
+                            ProcessID = data.GetReleasedPIDResult;
+
+                            // generate new process instance ID
+                            $.ajax({
+                                type: "GET",
+                                url: AgilePointServerBaseUrl + "/workflow/GetUUID",
+                                success: function (data, status) {
+                                    console.log(data);
+                                    ProcessInstanceID = data.GetUUIDResult;
+
+                                    // generate work object ID 
+                                    $.ajax({
+                                        type: "GET",
+                                        url: AgilePointServerBaseUrl + "/workflow/GetUUID",
+                                        success: function (data, status) {
+                                            console.log(data);
+                                            WorkObjectID = data.GetUUIDResult;
+
+                                            // Call create process to initiate process
+                                            var JSONObject = {
+                                                ProcessID: ProcessID, //"6DABCE10406245FCA838CD85667DC30E",
+                                                ProcessInstID: ProcessInstanceID, //"0FD30DDF40B640D4AFE41AEEBDAE1204",
+                                                ProcInstName: ProcessName, //"Test Process",
+                                                WorkObjID: WorkObjectID, //"0FD3088F40A640D4AFE41AEEBDAE0004",
+                                                WorkObjInfo: null,
+                                                SuperProcInstID: null,
+                                                Initiator: "foundation\\skumar",
+                                                CustomID: WorkObjectID,
+                                                Attributes: [{ Name: "/pd:AP/pd:processFields/pd:Workers", Value: "213" }],
+                                                blnStartImmediately: true
+                                            };
+
+                                            // start process
+                                            $.ajax({
+                                                headers: {
+                                                    "Authorization": "Basic Zm91bmRhdGlvblxza3VtYXI6c2MyY3gkajc="
+                                                },
+                                                type: "POST",
+                                                url: AgilePointServerBaseUrl + "/workflow/CreateProcInst",
+                                                data: JSON.stringify(JSONObject),
+                                                success: function (data, status) {
+                                                    console.log(data);
+													alert('Request Sent Successfully!');
+													
+																					
+
+                                                }
+                                            });
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    }
+                });
+								
+            });
+        });
+
+    </script>
+    <style>
+        body
+        {
+            background-color: #ddd;
+        }
+        * {
+            font-family: 'Segoe UI',Arial;
+        }
+
+        .label {
+            width: 200px;
+        }
+
+        .text {
+            width: 300px;
+        }
+
+        ul li {
+            height: 40px;
+        }
+
+            ul li span {
+                display: inline-block;
+            }
+        #Wrapper
+        {
+            border: 1px solid #999;
+            width: 700px;
+            padding: 10px;
+            margin: 100px auto;
+            box-shadow: 2px 2px 5px 5px #999;
+            background-color: #eee;
+            border-radius: 5px;
+            height: 600px;
+        }
+
+        h1
+        {
+            border-bottom: 1px solid #999;
+           text-align: center;
+           color: #666;
+           font-family: 'segoe ui', 'Arial';
+           font-weight: bold;
+        }
+
+        textarea
+        {
+            width: 400px;
+            height: 400px;
+            resize:none;
+        }
+
+        .area
+        {
+            height: 450px;
+        }
+
+        #Start
+        {
+            float: right;
+            margin-right: 55px;
+        }
+
+        input[type="text"]
+        {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Wrapper">
+    <h1>AgilePoint Process Initiator</h1>
+    <ul style="list-style-type: none;">
+        <li><span class="label">Template Name</span><span class="text">
+            <input id="Template" type="text" name="name" value="General%20-%20ODAA%20-%20External Forms" disabled /></span></li>
+        <li><span class="label">Instance Name</span><span class="text">
+            <input id="Instance" type="text" name="name" value="" /></span></li>
+						
+            <input id="Start" type="button" value="Start Process" />
+        </li>
+    </ul>
+    </div>
+</body>
+</html>
