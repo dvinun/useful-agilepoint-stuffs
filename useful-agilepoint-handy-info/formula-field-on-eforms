@@ -1,0 +1,17 @@
+Concat strings inside formula field. Make sure you use single quotes and + operators.
+'${Plant}' + '-' + '${Dept}' + '-' + substr(now, -4, 4) + '-' + '${SourceOfSavings}'
+--------------------
+Complex if with instr function inside.
+if( (instr('${CertifiableItemsLoad/ConstructionCertifications:[this]}', kapa) > 0), true, false)
+--------------------
+Make sure to have spaces like the sample below to get the formula field to work.
+if( (sum(${SODetailsSubform/SOScheduleLinesSubForm:[this]/SLSOQuantity:[*]})) >  (sum(${SODetailsSubform/SOMaterialDetailsSubform:[this]/SOQuantity:[*]}) ),true,false)
+--------------------
+if( '${TextBox1}' == '',false,true)
+--------------------
+Can I nest this many if statements on top of each other?
+Yes. You can nest complex statements inside if. I took the small portion of your code to verify and it worked. This is what I used to test:
+if( ('${CertifiableItemsLoad/ConstructionCertifications:[this]}' != "") &&
+('${CertifiableItemsLoad/SafetyStatus:[this]}' == "Accepted" || '${CertifiableItemsLoad/ConstructionCertificationsSubmitted:[this]}' == "Exception" ), 
+(if('${CertifiableItemsLoad/SafetyStatus:[this]}' == "Accepted", 1,'2')), ${TextBox1})
+-------------------

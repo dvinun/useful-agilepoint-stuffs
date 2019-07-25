@@ -1,0 +1,7 @@
+Below is the snippet we use to increment the loop count in Update Process Data Shape
+Convert.ToInt32(${/pd:AP/pd:processFields/pd:LoopCount}) + 1
+------------------------------
+Convert UTC date to readable format
+/pd:AP/pd:formFields/pd:SubmitDateTime
+TimeZoneInfo.ConvertTimeFromUtc(DateTime.SpecifyKind(Convert.ToDateTime(${/pd:AP/pd:formFields/pd:SubmitDateTime}.ToString()), DateTimeKind.Utc), TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time"));
+------------------------------

@@ -1,0 +1,22 @@
+Api to copy the whole | entire schema to other attribute (@"/")
+api.GetCustomAttr(WID, "//", false).ToString()
+-------------------------------
+These are useful when checking the status of the tasks and processes if you want to check from the workitem and process instance object.
+
+Task Status Strings
+
+Assigned
+Cancelled
+Completed
+Overdue
+Reassigned
+New
+
+Process Status Strings
+
+Cancelled
+Completed
+Running
+Suspended
+Initiated
+-------------------------------
