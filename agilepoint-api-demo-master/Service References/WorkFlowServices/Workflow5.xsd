@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://demo3:13487/AgilePointServer/Workflow?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfWFBaseProcessInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFBaseProcessInstance" nillable="true" type="tns:WFBaseProcessInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFBaseProcessInstance" nillable="true" type="tns:ArrayOfWFBaseProcessInstance" />
+  <xs:complexType name="WFBaseProcessInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompletedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastRunningEndTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastRunningStartTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastSwapDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcInitiator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInitiatorLoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessDefinitionDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInitiator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInitiatorLocation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuperProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFBaseProcessInstance" nillable="true" type="tns:WFBaseProcessInstance" />
+  <xs:complexType name="WFEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutoStart" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CustomAttributes" nillable="true" type="tns:ArrayOfNameValue" />
+      <xs:element minOccurs="0" name="Diagnostic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Entries" type="xs:int" />
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HighPriority" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ParamsXml" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcDefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SentDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SourceWorkItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenantID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFEvent" nillable="true" type="tns:WFEvent" />
+  <xs:complexType name="ArrayOfNameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NameValue" nillable="true" type="tns:NameValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNameValue" nillable="true" type="tns:ArrayOfNameValue" />
+  <xs:complexType name="NameValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NameValue" nillable="true" type="tns:NameValue" />
+  <xs:complexType name="ArrayOfKeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValue" nillable="true" type="tns:KeyValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValue" nillable="true" type="tns:ArrayOfKeyValue" />
+  <xs:complexType name="KeyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeyValue" nillable="true" type="tns:KeyValue" />
+  <xs:complexType name="ArrayOfWFManualWorkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFManualWorkItem" nillable="true" type="tns:WFManualWorkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFManualWorkItem" nillable="true" type="tns:ArrayOfWFManualWorkItem" />
+  <xs:complexType name="WFManualWorkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssignedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BeingProcessed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CancelledDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClientData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompletedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueHandled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ManualWorkItemDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PoolID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PoolInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcDefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcInstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessDefinitionDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResolveParticipant" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RestrictionType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session" type="xs:int" />
+      <xs:element minOccurs="0" name="SourceWorkItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WaitWorkPerformed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFManualWorkItem" nillable="true" type="tns:WFManualWorkItem" />
+  <xs:complexType name="ArrayOfWFBaseProcessDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFBaseProcessDefinition" nillable="true" type="tns:WFBaseProcessDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFBaseProcessDefinition" nillable="true" type="tns:ArrayOfWFBaseProcessDefinition" />
+  <xs:complexType name="WFBaseProcessDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplicationDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AuditLevel" type="tns:AuditLevel" />
+      <xs:element minOccurs="0" name="BaseDefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckedOutBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CheckedOutDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DefName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Diagnostic" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DocRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpectedTime" nillable="true" type="tns:WFTimeDuration" />
+      <xs:element minOccurs="0" name="InitiateConstraint" type="tns:WFBaseProcessDefinition.InitiationConstraint" />
+      <xs:element minOccurs="0" name="LabelID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaximumSessionAllowed" type="xs:int" />
+      <xs:element minOccurs="0" name="OnComplete" type="tns:WFBaseProcessDefinition.ConsistencyOnComplete" />
+      <xs:element minOccurs="0" name="Owner" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PreVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PrimaryInitiateEvent" type="tns:WFBaseProcessDefinition.PrimaryInitiationConstraint" />
+      <xs:element minOccurs="0" name="PrimaryInitiateEventValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessDefinitionDisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReleaseDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Rule" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SelectedTheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SupplementInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFBaseProcessDefinition" nillable="true" type="tns:WFBaseProcessDefinition" />
+  <xs:simpleType name="AuditLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="High" />
+      <xs:enumeration value="Low" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AuditLevel" nillable="true" type="tns:AuditLevel" />
+  <xs:complexType name="WFTimeDuration">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BusinessTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Length" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="tns:WFTimeUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFTimeDuration" nillable="true" type="tns:WFTimeDuration" />
+  <xs:complexType name="WFTimeUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFTimeUnit" nillable="true" type="tns:WFTimeUnit" />
+  <xs:simpleType name="WFBaseProcessDefinition.InitiationConstraint">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ParentProcess" />
+      <xs:enumeration value="ChildProcess" />
+      <xs:enumeration value="ParentChildProcess" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFBaseProcessDefinition.InitiationConstraint" nillable="true" type="tns:WFBaseProcessDefinition.InitiationConstraint" />
+  <xs:simpleType name="WFBaseProcessDefinition.ConsistencyOnComplete">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="LeaveChildProcessRunning" />
+      <xs:enumeration value="CancelChildProcesses" />
+      <xs:enumeration value="InheritParentProcess" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFBaseProcessDefinition.ConsistencyOnComplete" nillable="true" type="tns:WFBaseProcessDefinition.ConsistencyOnComplete" />
+  <xs:simpleType name="WFBaseProcessDefinition.PrimaryInitiationConstraint">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Any" />
+      <xs:enumeration value="eForms" />
+      <xs:enumeration value="ExternalForms" />
+      <xs:enumeration value="Message" />
+      <xs:enumeration value="Events" />
+      <xs:enumeration value="SystemIntegration" />
+      <xs:enumeration value="ParentProcess" />
+      <xs:enumeration value="SPSIntegration" />
+      <xs:enumeration value="InfoPathIntegration" />
+      <xs:enumeration value="Salesforce" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFBaseProcessDefinition.PrimaryInitiationConstraint" nillable="true" type="tns:WFBaseProcessDefinition.PrimaryInitiationConstraint" />
+  <xs:complexType name="WFProcessMigrationInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Action" type="tns:WFProcessMigrationInstruction.MigrationAction" />
+      <xs:element minOccurs="0" name="IncludeXmlData" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MatchingActivityDefinitions" nillable="true" type="tns:ArrayOfWFProcessMigrationInstruction.MatchingActivityDefinition" />
+      <xs:element minOccurs="0" name="SourceProcessDefinitionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetProcessDefinitionID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessMigrationInstruction" nillable="true" type="tns:WFProcessMigrationInstruction" />
+  <xs:simpleType name="WFProcessMigrationInstruction.MigrationAction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KeepState" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFProcessMigrationInstruction.MigrationAction" nillable="true" type="tns:WFProcessMigrationInstruction.MigrationAction" />
+  <xs:complexType name="ArrayOfWFProcessMigrationInstruction.MatchingActivityDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFProcessMigrationInstruction.MatchingActivityDefinition" nillable="true" type="tns:WFProcessMigrationInstruction.MatchingActivityDefinition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFProcessMigrationInstruction.MatchingActivityDefinition" nillable="true" type="tns:ArrayOfWFProcessMigrationInstruction.MatchingActivityDefinition" />
+  <xs:complexType name="WFProcessMigrationInstruction.MatchingActivityDefinition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentActivated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SourceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TargetName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessMigrationInstruction.MatchingActivityDefinition" nillable="true" type="tns:WFProcessMigrationInstruction.MatchingActivityDefinition" />
+  <xs:complexType name="WFProcessMergingInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MergedProcessInstance" nillable="true" type="tns:WFProcessMergingInstruction.MergedProcessParameter" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MergingProcessInstanceIDs" nillable="true" type="q1:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessMergingInstruction" nillable="true" type="tns:WFProcessMergingInstruction" />
+  <xs:complexType name="WFProcessMergingInstruction.MergedProcessParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomAttributes" nillable="true" type="tns:ArrayOfNameValue" />
+      <xs:element minOccurs="0" name="ProcessInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInstanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessMergingInstruction.MergedProcessParameter" nillable="true" type="tns:WFProcessMergingInstruction.MergedProcessParameter" />
+  <xs:complexType name="WFProcessSplittingInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SplitProcessInstances" nillable="true" type="tns:ArrayOfWFProcessSplittingInstruction.SplitProcessParameter" />
+      <xs:element minOccurs="0" name="SplittingProcessInstanceID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessSplittingInstruction" nillable="true" type="tns:WFProcessSplittingInstruction" />
+  <xs:complexType name="ArrayOfWFProcessSplittingInstruction.SplitProcessParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFProcessSplittingInstruction.SplitProcessParameter" nillable="true" type="tns:WFProcessSplittingInstruction.SplitProcessParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFProcessSplittingInstruction.SplitProcessParameter" nillable="true" type="tns:ArrayOfWFProcessSplittingInstruction.SplitProcessParameter" />
+  <xs:complexType name="WFProcessSplittingInstruction.SplitProcessParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomAttributes" nillable="true" type="tns:ArrayOfNameValue" />
+      <xs:element minOccurs="0" name="ProcessInstanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcessInstanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WorkObjectInfo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFProcessSplittingInstruction.SplitProcessParameter" nillable="true" type="tns:WFProcessSplittingInstruction.SplitProcessParameter" />
+  <xs:complexType name="WFQueryExpr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Any" nillable="true" type="tns:WFAny" />
+      <xs:element minOccurs="0" name="ColumnName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Operator" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFQueryExpr" nillable="true" type="tns:WFQueryExpr" />
+  <xs:complexType name="WFAny">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFAny" nillable="true" type="tns:WFAny" />
+  <xs:complexType name="WFBaseActivityInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompletedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InStack" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session" type="xs:int" />
+      <xs:element minOccurs="0" name="StartedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TokenPos" nillable="true" type="tns:WFTokenPosType" />
+      <xs:element minOccurs="0" name="Tokens" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFBaseActivityInstance" nillable="true" type="tns:WFBaseActivityInstance" />
+  <xs:complexType name="WFTokenPosType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFTokenPosType" nillable="true" type="tns:WFTokenPosType" />
+  <xs:complexType name="ArrayOfWFBaseActivityInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFBaseActivityInstance" nillable="true" type="tns:WFBaseActivityInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFBaseActivityInstance" nillable="true" type="tns:ArrayOfWFBaseActivityInstance" />
+  <xs:complexType name="WFAutomaticWorkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ApplName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompletedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueHandled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProcedureInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Synchronous" type="xs:boolean" />
+      <xs:element minOccurs="0" name="WorkItemID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFAutomaticWorkItem" nillable="true" type="tns:WFAutomaticWorkItem" />
+  <xs:complexType name="ArrayOfWFAutomaticWorkItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFAutomaticWorkItem" nillable="true" type="tns:WFAutomaticWorkItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFAutomaticWorkItem" nillable="true" type="tns:ArrayOfWFAutomaticWorkItem" />
+  <xs:complexType name="ArrayOfWFEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFEvent" nillable="true" type="tns:WFEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFEvent" nillable="true" type="tns:ArrayOfWFEvent" />
+  <xs:complexType name="ArrayOfWFMailDeliverable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFMailDeliverable" nillable="true" type="tns:WFMailDeliverable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFMailDeliverable" nillable="true" type="tns:ArrayOfWFMailDeliverable" />
+  <xs:complexType name="WFMailDeliverable">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeliveryTime" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mail" nillable="true" type="tns:WFMailTemplate" />
+      <xs:element minOccurs="0" name="NextSendingDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ProcInstID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Session" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFMailDeliverable" nillable="true" type="tns:WFMailDeliverable" />
+  <xs:complexType name="WFMailTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Attachments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EncodingFormat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Format" type="tns:MailFormat" />
+      <xs:element minOccurs="0" name="From" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastModifiedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LeftToRight" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MailPriority" type="tns:MailPriority" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="To" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFMailTemplate" nillable="true" type="tns:WFMailTemplate" />
+  <xs:simpleType name="MailFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Html" />
+      <xs:enumeration value="Default" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MailFormat" nillable="true" type="tns:MailFormat" />
+  <xs:simpleType name="MailPriority">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="High" />
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Low" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MailPriority" nillable="true" type="tns:MailPriority" />
+  <xs:complexType name="WFAuditTrailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:WFAuditTrail.Category" />
+      <xs:element minOccurs="0" name="DateOccurred" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ObjectInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Performer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:WFAuditTrail.Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFAuditTrailItem" nillable="true" type="tns:WFAuditTrailItem" />
+  <xs:simpleType name="WFAuditTrail.Category">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProcessDefinition" />
+      <xs:enumeration value="ProcessInstance" />
+      <xs:enumeration value="ActivityInstance" />
+      <xs:enumeration value="ManualWorkItem" />
+      <xs:enumeration value="AutomaticWorkItem" />
+      <xs:enumeration value="CustomAttributes" />
+      <xs:enumeration value="Application" />
+      <xs:enumeration value="FloatingUserAccess" />
+      <xs:enumeration value="AppSettings" />
+      <xs:enumeration value="AnonymousAccessSettings" />
+      <xs:enumeration value="SecureKeyCredential" />
+      <xs:enumeration value="AgilePart" />
+      <xs:enumeration value="AgileWork" />
+      <xs:enumeration value="AgileConnector" />
+      <xs:enumeration value="AgileExtender" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFAuditTrail.Category" nillable="true" type="tns:WFAuditTrail.Category" />
+  <xs:simpleType name="WFAuditTrail.Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Succeeded" />
+      <xs:enumeration value="Failed" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFAuditTrail.Status" nillable="true" type="tns:WFAuditTrail.Status" />
+  <xs:complexType name="ArrayOfWFAuditTrailItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFAuditTrailItem" nillable="true" type="tns:WFAuditTrailItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFAuditTrailItem" nillable="true" type="tns:ArrayOfWFAuditTrailItem" />
+  <xs:complexType name="WFPartialRollbackInstruction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PartialRollbackUnits" nillable="true" type="tns:ArrayOfWFPartialRollbackInstruction.PartialRollbackUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFPartialRollbackInstruction" nillable="true" type="tns:WFPartialRollbackInstruction" />
+  <xs:complexType name="ArrayOfWFPartialRollbackInstruction.PartialRollbackUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WFPartialRollbackInstruction.PartialRollbackUnit" nillable="true" type="tns:WFPartialRollbackInstruction.PartialRollbackUnit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWFPartialRollbackInstruction.PartialRollbackUnit" nillable="true" type="tns:ArrayOfWFPartialRollbackInstruction.PartialRollbackUnit" />
+  <xs:complexType name="WFPartialRollbackInstruction.PartialRollbackUnit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DestinationActivityInstanceID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SourceActivityInstanceIDs" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFPartialRollbackInstruction.PartialRollbackUnit" nillable="true" type="tns:WFPartialRollbackInstruction.PartialRollbackUnit" />
+  <xs:complexType name="WFScheduledItemTimer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" type="tns:WFScheduledItemTimer.Kind" />
+      <xs:element minOccurs="0" name="CreatedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DueDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ItemID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OwnerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameter" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RefID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StartedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Status" type="tns:WFScheduledItemTimer.State" />
+      <xs:element minOccurs="0" name="SuspendedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuspendedDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WFScheduledItemTimer" nillable="true" type="tns:WFScheduledItemTimer" />
+  <xs:simpleType name="WFScheduledItemTimer.Kind">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ProcessInstance" />
+      <xs:enumeration value="ActivityInstance" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFScheduledItemTimer.Kind" nillable="true" type="tns:WFScheduledItemTimer.Kind" />
+  <xs:simpleType name="WFScheduledItemTimer.State">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Started" />
+      <xs:enumeration value="Suspended" />
+      <xs:enumeration value="Finished" />
+      <xs:enumeration value="Cancelled" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="WFScheduledItemTimer.State" nillable="true" type="tns:WFScheduledItemTimer.State" />
+</xs:schema>

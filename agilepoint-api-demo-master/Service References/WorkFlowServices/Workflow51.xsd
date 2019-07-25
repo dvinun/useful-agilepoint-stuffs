@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="www.agilepoint.com/bpm" elementFormDefault="qualified" targetNamespace="www.agilepoint.com/bpm" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://demo3:13487/AgilePointServer/Workflow?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" />
+  <xs:import schemaLocation="http://demo3:13487/AgilePointServer/Workflow?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" />
+  <xs:import schemaLocation="http://demo3:13487/AgilePointServer/Workflow?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="CheckAuthenticated">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q1:WCFClientInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAuthenticatedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckAuthenticatedResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcInstsEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q2:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcInstsExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryProcInstsExResult" nillable="true" type="q3:ArrayOfWFBaseProcessInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q4:WCFClientInfo" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q5:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CompleteWorkItemResult" nillable="true" type="q6:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoAssignWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q7:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoAssignWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="UndoAssignWorkItemExResult" nillable="true" type="q8:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoAssignWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q9:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UndoAssignWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="UndoAssignWorkItemResult" nillable="true" type="q10:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrsEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q11:WCFClientInfo" />
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="customIDs" nillable="true" type="q12:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrsExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetCustomAttrsExResult" nillable="true" type="q13:ArrayOfKeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrsByNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q14:WCFClientInfo" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="customIDs" nillable="true" type="q15:ArrayOfstring" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q16:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrsByNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetCustomAttrsByNamesResult" nillable="true" type="q17:ArrayOfKeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInstStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q18:WCFClientInfo" />
+        <xs:element minOccurs="0" name="piID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInstStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetActivityInstStatusResult" nillable="true" type="q19:ArrayOfKeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q20:WCFClientInfo" />
+        <xs:element minOccurs="0" name="PID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workObjectID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="superPIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startImmediately" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateProcInstResult" nillable="true" type="q21:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q22:WCFClientInfo" />
+        <xs:element minOccurs="0" name="PID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workObjectID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="superPIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q23:ArrayOfNameValue" />
+        <xs:element minOccurs="0" name="startImmediately" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateProcInstExResult" nillable="true" type="q24:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstEx1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q25:WCFClientInfo" />
+        <xs:element minOccurs="0" name="PID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workObjectID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="superPIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="initiator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q26:ArrayOfNameValue" />
+        <xs:element minOccurs="0" name="startImmediately" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstEx1Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateProcInstEx1Result" nillable="true" type="q27:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstEx2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q28:WCFClientInfo" />
+        <xs:element minOccurs="0" name="PID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PIName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workObjectID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workObjectInfo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="superPIID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="initiator" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q29:ArrayOfNameValue" />
+        <xs:element minOccurs="0" name="startImmediately" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcInstEx2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateProcInstEx2Result" nillable="true" type="q30:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q31:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ReassignWorkItemResult" nillable="true" type="q32:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q33:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ReassignWorkItemExResult" nillable="true" type="q34:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q35:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CompleteWorkItemExResult" nillable="true" type="q36:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q37:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="AssignWorkItemResult" nillable="true" type="q38:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q39:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssignWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="AssignWorkItemExResult" nillable="true" type="q40:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q41:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CancelWorkItemResult" nillable="true" type="q42:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q43:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CancelWorkItemExResult" nillable="true" type="q44:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q45:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomAttrsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q46:WCFClientInfo" />
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProcDefResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateProcDefResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkListEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q47:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkListExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryWorkListExResult" nillable="true" type="q48:ArrayOfWFManualWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefGraphics">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q49:WCFClientInfo" />
+        <xs:element minOccurs="0" name="pID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefGraphicsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProcDefGraphicsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SurrogateWithAppName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q50:WCFClientInfo" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="locale" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SurrogateWithAppNameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Surrogate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q51:WCFClientInfo" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SurrogateResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientAppName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q52:WCFClientInfo" />
+        <xs:element minOccurs="0" name="appName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientAppNameResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientLocale">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q53:WCFClientInfo" />
+        <xs:element minOccurs="0" name="locale" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClientLocaleResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q54:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProcDefXmlResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q55:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcDefResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q56:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckoutProcDefResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckoutProcDefResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UncheckoutProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q57:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UncheckoutProcDefResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckinProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q58:WCFClientInfo" />
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckinProcDefResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckinProcDefResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q59:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseProcDefResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefNameVersion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q60:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefNameVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcDefNameVersionResult" nillable="true" type="q61:KeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseProcDefID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q62:WCFClientInfo" />
+        <xs:element minOccurs="0" name="procDefName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBaseProcDefIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetBaseProcDefIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReleasedPID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q63:WCFClientInfo" />
+        <xs:element minOccurs="0" name="procDefName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReleasedPIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetReleasedPIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReleasedProcDefs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q64:WCFClientInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReleasedProcDefsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetReleasedProcDefsResult" nillable="true" type="q65:ArrayOfKeyValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefByBasePID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q66:WCFClientInfo" />
+        <xs:element minOccurs="0" name="baseprocessTemplateID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefByBasePIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcDefByBasePIDResult" nillable="true" type="q67:ArrayOfWFBaseProcessDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q68:WCFClientInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcDefsResult" nillable="true" type="q69:ArrayOfWFBaseProcessDefinition" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q70="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q70:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q71="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="StartProcInstResult" nillable="true" type="q71:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q72:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q73="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="SuspendProcInstResult" nillable="true" type="q73:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResumeProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q74:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResumeProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ResumeProcInstResult" nillable="true" type="q75:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MigrateProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q76:WCFClientInfo" />
+        <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="instruction" nillable="true" type="q77:WFProcessMigrationInstruction" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reserved" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MigrateProcInstResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MergeProcInsts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q78:WCFClientInfo" />
+        <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="instruction" nillable="true" type="q79:WFProcessMergingInstruction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MergeProcInstsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MergeProcInstsResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SplitProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q80="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q80:WCFClientInfo" />
+        <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="instruction" nillable="true" type="q81:WFProcessSplittingInstruction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SplitProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SplitProcInstResult" nillable="true" type="q82:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q83:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteProcInstResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q84:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CancelProcInstResult" nillable="true" type="q85:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q86:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcInstResult" nillable="true" type="q87:WFBaseProcessInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInstAttrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q88:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInstAttrsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcInstAttrsResult" nillable="true" type="q89:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInstAttr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q90:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="attributeName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcInstAttrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcInstAttrResult" nillable="true" type="q91:NameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcInsts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q92="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q92:WCFClientInfo" />
+        <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="expr" nillable="true" type="q93:WFQueryExpr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcInstsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q94="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryProcInstsResult" nillable="true" type="q94:ArrayOfWFBaseProcessInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackActivityInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q95="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q95:WCFClientInfo" />
+        <xs:element minOccurs="0" name="activityInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackActivityInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="RollbackActivityInstResult" nillable="true" type="q96:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelActivityInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q97:WCFClientInfo" />
+        <xs:element minOccurs="0" name="activityInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelActivityInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q98="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CancelActivityInstResult" nillable="true" type="q98:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q99="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q99:WCFClientInfo" />
+        <xs:element minOccurs="0" name="activityInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q100="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetActivityInstResult" nillable="true" type="q100:WFBaseActivityInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryActivityInsts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q101="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q101:WCFClientInfo" />
+        <xs:element xmlns:q102="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="expr" nillable="true" type="q102:WFQueryExpr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryActivityInstsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryActivityInstsResult" nillable="true" type="q103:ArrayOfWFBaseActivityInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInstsByPIID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q104="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q104:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActivityInstsByPIIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetActivityInstsByPIIDResult" nillable="true" type="q105:ArrayOfWFBaseActivityInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkListByUserID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q106="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q106:WCFClientInfo" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkListByUserIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetWorkListByUserIDResult" nillable="true" type="q107:ArrayOfWFManualWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q108="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q108:WCFClientInfo" />
+        <xs:element xmlns:q109="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="expr" nillable="true" type="q109:WFQueryExpr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryWorkListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryWorkListResult" nillable="true" type="q110:ArrayOfWFManualWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q111="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q111:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetWorkItemResult" nillable="true" type="q112:WFManualWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q113:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcedureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetProcedureResult" nillable="true" type="q114:WFAutomaticWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q115="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q115:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteProcedureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q116="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CompleteProcedureResult" nillable="true" type="q116:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcedure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q117="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q117:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelProcedureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CancelProcedureResult" nillable="true" type="q118:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcedureList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q119="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q119:WCFClientInfo" />
+        <xs:element xmlns:q120="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="expr" nillable="true" type="q120:WFQueryExpr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryProcedureListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryProcedureListResult" nillable="true" type="q121:ArrayOfWFAutomaticWorkItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q122:WCFClientInfo" />
+        <xs:element minOccurs="0" name="eventID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetEventResult" nillable="true" type="q123:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsByProcInstID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q124:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEventsByProcInstIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q125="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetEventsByProcInstIDResult" nillable="true" type="q125:ArrayOfWFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PromoteProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q126="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q126:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PromoteProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="PromoteProcInstResult" nillable="true" type="q127:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q128="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q128:WCFClientInfo" />
+        <xs:element minOccurs="0" name="activityInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackProcInstResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="RollbackProcInstResult" nillable="true" type="q129:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMailDeliverables">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q130="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q130:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMailDeliverablesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q131="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetMailDeliverablesResult" nillable="true" type="q131:ArrayOfWFMailDeliverable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendMailDeliverable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q132:WCFClientInfo" />
+        <xs:element minOccurs="0" name="mID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendMailDeliverableResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelMailDeliverable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q133="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q133:WCFClientInfo" />
+        <xs:element minOccurs="0" name="mID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelMailDeliverableResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpectingSendMailDeliverable">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q134="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q134:WCFClientInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExpectingSendMailDeliverableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetExpectingSendMailDeliverableResult" nillable="true" type="q135:ArrayOfWFMailDeliverable" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q136="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q136:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomAttrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCustomAttrResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomAttr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q137="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q137:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="val" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomAttrResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomAttr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q138:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomAttrResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomAttrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q139="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q139:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q140="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names" nillable="true" type="q140:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveCustomAttrsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomAttrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q141="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q141:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q142="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q142:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetCustomAttrsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDatabase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q143="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q143:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDatabaseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="QueryDatabaseResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDatabaseEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q144="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q144:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDatabaseExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q145="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QueryDatabaseExResult" nillable="true" type="q145:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q146="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q146:WCFClientInfo" />
+        <xs:element minOccurs="0" name="activityInstanceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workToPerform" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q147="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="duration" nillable="true" type="q147:WFTimeDuration" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateWorkItemResult" nillable="true" type="q148:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q149="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q149:WCFClientInfo" />
+        <xs:element minOccurs="0" name="procInstID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ArchiveProcInstResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q150="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q150:WCFClientInfo" />
+        <xs:element minOccurs="0" name="procInstID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreProcInstResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryArchivedProcInsts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q151="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q151:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryArchivedProcInstsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q152="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryArchivedProcInstsResult" nillable="true" type="q152:ArrayOfWFBaseProcessInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLinkedWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q153="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q153:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sourceWorkItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workToPerform" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q154="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="duration" nillable="true" type="q154:WFTimeDuration" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLinkedWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateLinkedWorkItemResult" nillable="true" type="q155:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePseudoWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q156="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q156:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sourceWorkItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workToPerform" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q157="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="duration" nillable="true" type="q157:WFTimeDuration" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reserved" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePseudoWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q158="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreatePseudoWorkItemResult" nillable="true" type="q158:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProcInst">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q159="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q159:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processInstanceID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q160="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q160:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProcInstResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q161="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q161:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q162="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="attributes" nillable="true" type="q162:ArrayOfNameValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProcDef">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q163:WCFClientInfo" />
+        <xs:element minOccurs="0" name="xml" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProcDefResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateProcDefResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollAuditTrail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q164="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q164:WCFClientInfo" />
+        <xs:element xmlns:q165="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="item" nillable="true" type="q165:WFAuditTrailItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnrollAuditTrailResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAuditTrail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q166="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q166:WCFClientInfo" />
+        <xs:element minOccurs="0" name="where" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryAuditTrailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q167="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="QueryAuditTrailResult" nillable="true" type="q167:ArrayOfWFAuditTrailItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignUpdateWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q168="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q168:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orginalUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newAssigneeUserID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReassignUpdateWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q169="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ReassignUpdateWorkItemResult" nillable="true" type="q169:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLinkedWorkItemEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q170="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q170:WCFClientInfo" />
+        <xs:element minOccurs="0" name="sourceWorkItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workToPerform" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q171="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="duration" nillable="true" type="q171:WFTimeDuration" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bDependent" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateLinkedWorkItemExResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q172="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="CreateLinkedWorkItemExResult" nillable="true" type="q172:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailEx">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q173="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q173:WCFClientInfo" />
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="cc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="body" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="attachments" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailExResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackActivityInsts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q174:WCFClientInfo" />
+        <xs:element xmlns:q175="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="instruction" nillable="true" type="q175:WFPartialRollbackInstruction" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RollbackActivityInstsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="RollbackActivityInstsResult" nillable="true" type="q176:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateWorkItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q177="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q177:WCFClientInfo" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activate" type="xs:boolean" />
+        <xs:element minOccurs="0" name="clientData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivateWorkItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q178="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ActivateWorkItemResult" nillable="true" type="q178:WFEvent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q179="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q179:WCFClientInfo" />
+        <xs:element minOccurs="0" name="itemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q180="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="GetScheduledItemTimerResult" nillable="true" type="q180:WFScheduledItemTimer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResumeScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q181="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q181:WCFClientInfo" />
+        <xs:element minOccurs="0" name="itemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dueDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResumeScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q182="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q182:WCFClientInfo" />
+        <xs:element minOccurs="0" name="itemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SuspendScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q183="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q183:WCFClientInfo" />
+        <xs:element minOccurs="0" name="itemID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dueDate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q184="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q184:WCFClientInfo" />
+        <xs:element minOccurs="0" name="itemID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetScheduledItemTimer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q185="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q185:WCFClientInfo" />
+        <xs:element xmlns:q186="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="ownerType" type="q186:WFScheduledItemTimer.Kind" />
+        <xs:element minOccurs="0" name="ownerID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="referenceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dueDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="parameter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetScheduledItemTimerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetScheduledItemTimerResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomAttrs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q187:WCFClientInfo" />
+        <xs:element minOccurs="0" name="customID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteCustomAttrsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailEx1">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q188="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q188:WCFClientInfo" />
+        <xs:element minOccurs="0" name="procesInstanceID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workItemID" nillable="true" type="xs:string" />
+        <xs:element xmlns:q189="http://schemas.datacontract.org/2004/07/Ascentn.Workflow.Base" minOccurs="0" name="mail" nillable="true" type="q189:WFMailTemplate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMailEx1Response">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTemporaryFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q190="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q190:WCFClientInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="content" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTemporaryFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveTemporaryFileResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTemporaryFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q191="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q191:WCFClientInfo" />
+        <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTemporaryFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProcDefSupplement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q192="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q192:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processDefinitionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activityDefinitionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="supplementInfo" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProcDefSupplementResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefSupplement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q193="http://schemas.datacontract.org/2004/07/Ascentn.AgilePoint.WCFService" minOccurs="0" name="clientInfo" nillable="true" type="q193:WCFClientInfo" />
+        <xs:element minOccurs="0" name="processDefinitionID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="activityDefinitionID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProcDefSupplementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetProcDefSupplementResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
