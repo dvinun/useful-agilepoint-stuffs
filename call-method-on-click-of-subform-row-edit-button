@@ -1,0 +1,4 @@
+$(".editSubFormRow").on('click', function(event){
+   alert('hi');
+   // your logic goes here
+});
