@@ -1,5 +1,3 @@
-﻿using Hitachi.PhaseGate.Base;
-using Hitachi.PhaseGate.Contract;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hitachi.PhaseGate.Workflow
+namespace CustomerName.AppName.Workflow
 {
     internal abstract class NXOperation : INXOperation, IDisposable
     {
