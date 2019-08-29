@@ -15,3 +15,6 @@ if( ('${CertifiableItemsLoad/ConstructionCertifications:[this]}' != "") &&
 ('${CertifiableItemsLoad/SafetyStatus:[this]}' == "Accepted" || '${CertifiableItemsLoad/ConstructionCertificationsSubmitted:[this]}' == "Exception" ), 
 (if('${CertifiableItemsLoad/SafetyStatus:[this]}' == "Accepted", 1,'2')), ${TextBox1})
 -------------------
+Some formula snippet got this morning (8/29/2019)
+if('${SequenceNumber}' == 10,011,(if(${SequenceNumber} + 1 < 10, '00' + (${SequenceNumber} + 1), (if(${SequenceNumber} + 1 < 100, '0' + (${SequenceNumber} + 1), (${SequenceNumber} + 1))))))
+-------------------
