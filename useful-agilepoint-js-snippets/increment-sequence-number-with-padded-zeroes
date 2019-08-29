@@ -1,0 +1,14 @@
+// Call IncrementSequenceNumber method on form load or on lookup complete accordingly.
+
+function IncrementSequenceNumber()
+{
+eFormHelper.getFieldValue({fieldId: 'SequenceNumber'}, function(resultSequenceNumber){
+	eFormHelper.setFieldValue({fieldId: 'NewSequenceNumber', value: padToThree(Number(resultSequenceNumber.data)+1)}, function(resultNewSequenceNumber){});
+});
+}
+
+function padToThree(number) {
+  if (number<=999) { number = ("00"+number).slice(-3); }
+  return number;
+}
+
