@@ -18,3 +18,5 @@ if( ('${CertifiableItemsLoad/ConstructionCertifications:[this]}' != "") &&
 Some formula snippet got this morning (8/29/2019)
 if('${SequenceNumber}' == 10,011,(if(${SequenceNumber} + 1 < 10, '00' + (${SequenceNumber} + 1), (if(${SequenceNumber} + 1 < 100, '0' + (${SequenceNumber} + 1), (${SequenceNumber} + 1))))))
 -------------------
+if('${SequenceNumber}' == 10,011,(if((decimal(${SequenceNumber},0) + 1) < 10,'00' + (decimal(${SequenceNumber},0) + 1),(if((decimal(${SequenceNumber},0) + 1) < 100,'0' + (decimal(${SequenceNumber},0) + 1),(decimal(${SequenceNumber},0) + 1))))))
+-------------------
